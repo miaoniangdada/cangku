@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function toggle(){
+        var test1 = document.getElementById('test1');
+        if(test1.getAttribute("src",2)=="one.png"){
+           test1.src="two.png";
+          }else{
+          test1.src="one.png";
+        }
+    }
+</script>
+
+    <img id="test1" src="one.png" alt="" onclick="toggle()" />
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <style type="text/css">@import url(master.css);</style>
+    <script>
+        function getInfo(){ 
+        var s = "";   
+         s +=  document.body.clientWidth;   
+       return (s);  
+       }
+        //跑动的次数
+        var count = 0;
+        //动画的执行方向
+        var isgo = false;
+        //定义计时器对象
+        var timer;
+    
+        window.onload = function () {
+            /*获取ul元素*/
+            var ul_img = document.getElementsByClassName("ul_img")[0];
+            //获取所有的li图片元素
+            var li_img = document.getElementsByClassName("li_img");
+            //获取控制方向的箭头元素
+            var arrow = document.getElementsByClassName("arrow");
+            //获取所有按钮元素
+            var div_btn = document.getElementsByClassName("div_btn");
+            div_btn[0].style.backgroundColor = "gray";
+    
+    
+            /*定义计时器，控制图片移动*/
+            showtime();
+            function showtime() {
+                timer = setInterval(function () {
+                    if (isgo == false) {
+                        count++;
+                        ul_img.style.transform = "translate(" + -getInfo() *count + "px)";
+                        if (count >= li_img.length - 1) {
+                            count = li_img.length - 1;
+                            isgo = true;
+                        }
+                    }
+                    else {
+                        count--;
+                        ul_img.style.transform = "translate(" + -getInfo() * count + "px)";
+                        if (count <= 0) {
+                            count = 0;
+                            isgo = false;
+                        }
+                    }
+    
+                    for (var i = 0; i < div_btn.length; i++) {
+                        div_btn[i].style.backgroundColor = "gray";
+                    }
+    
+                    div_btn[count].style.backgroundColor = "black";
+    
+                }, 4000)
+            }
+    
+            /*鼠标进入左右方向键操作*/
+            for (var i = 0; i < arrow.length; i++) {
+                //鼠标悬停时
+                arrow[i].onmouseover = function () {
+                    //停止计时器
+                    clearInterval(timer);
+                }
+                //鼠标离开时
+                arrow[i].onmouseout = function () {
+                    //添加计时器
+                    showtime();
+                }
+                arrow[i].onclick = function () {
+                    //区分左右
+                    if (this.title == 0) {
+                        count++;
+                        if (count > 3) {
+                            count = 0;
+                        }
+                    }
+                    else {
+                        count--;
+                        if (count < 0) {
+                            count = 3;
+                        }
+                    }
+    
+                    ul_img.style.transform = "translate(" + -getInfo() * count + "px)";
+    
+                    for (var i = 0; i < div_btn.length; i++) {
+                        div_btn[i].style.backgroundColor = "gray";
+                    }
+                    div_btn[count].style.backgroundColor = "black";
+                }
+            }
+    
+            //鼠标悬停在底部按钮的操作
+            for (var b = 0; b < div_btn.length; b++) {
+                div_btn[b].index = b;
+                div_btn[b].onmouseover = function () {
+    
+                    clearInterval(timer);
+    
+                    for (var a = 0; a < div_btn.length; a++) {
+                        div_btn[a].style.backgroundColor = "gray";
+                    }
+                    div_btn[this.index].style.backgroundColor = "black";
+                    //让count值对应
+                    //为了控制方向
+                    if (this.index == 3) {
+                        isgo = true;
+                    }
+                    if (this.index == 0) {
+                        isgo = false;
+                    }
+                    count = this.index;
+                    ul_img.style.transform = "translate(" + -getInfo() * this.index + "px)";
+                }
+                div_btn[b].onmouseout = function () {
+                    //添加计时器
+                    showtime();
+                }
+            }
+        }
+
+        function toggle1(){
+        var test1 = document.getElementById("market1");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+
+      function toggle2(){
+        var test1 = document.getElementById("market2");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+
+   function toggle3(){
+        var test1 = document.getElementById("market3");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle4(){
+        var test1 = document.getElementById("market4");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle5(){
+        var test1 = document.getElementById("market5");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle6(){
+        var test1 = document.getElementById("market6");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle7(){
+        var test1 = document.getElementById("market7");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle8(){
+        var test1 = document.getElementById("market8");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle9(){
+        var test1 = document.getElementById("market9");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle10(){
+        var test1 = document.getElementById("market10");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle11(){
+        var test1 = document.getElementById("market11");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle12(){
+        var test1 = document.getElementById("market12");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle13(){
+        var test1 = document.getElementById("market13");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle14(){
+        var test1 = document.getElementById("market14");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+
+     function toggle15(){
+        var test1 = document.getElementById("market15");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+       
+    function toggle16(){
+        var test1 = document.getElementById("market16");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle17(){
+        var test1 = document.getElementById("market17");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle18(){
+        var test1 = document.getElementById("market18");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    function toggle19(){
+        var test1 = document.getElementById("market19");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    
+    function toggle20(){
+        var test1 = document.getElementById("market20");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }function toggle21(){
+        var test1 = document.getElementById("market21");
+        if(test1.getAttribute("src",2)=="button.png"){
+           test1.src="gouzi.png";
+          }else{
+          test1.src="button.png";
+        }
+    }
+    
+
+    </script>
+</head>
+<body>
+   <div id=loginbar>
+       <a id="return" href="">
+          回到首页
+       <a id="weixin" href="">
+        关注微信 
+         </a>
+       <a id=admin href="">
+          apple,你好
+         </a>    
+      </div> 
+   <div id=header>
+       <img src="logo.png" id="logopng">
+       <a src="" id="wss">维生数</a>
+       <div id=english>COMPUTE-STUDIO-VTMER</div>
+       <hr style="height:5px;
+       position: absolute;
+        margin-left: 23.7%;
+        width:10.9%;
+        margin-top: -2%;
+        border:none;
+        border-top:1px solid  #0066CC;" />
+        <div style="margin-left: 35.7%;
+        margin-top: -9%;
+        height: 20%;
+        border-left: 1px dotted #dfdfdf;"
+        >
+        <p style="margin-top: 70px;">广工知名工作室品牌</p>
+        <p style="margin-top: 20px;">广工计算机行业最具影响力工作室之一</p>
+        <img src="phone.png" id="phone" 
+          style="
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 43%;
+    height: 4.3%;
+    width: 3%;">
+    <p id="phone-number">400-0399-386</p>
+   </div>
+    
+    </div>
+    
+       
+   <div id=nav>
+        <a class="anniu1"href="" >首页</a>
+        <a class="anniu" href="">服务套餐</a>
+        <a class="anniu" href="">行业方案</a>
+        <a class="anniu" href="">培训中心</a>
+        <a class="anniu" href="">团队风采</a>
+        <a class="anniu" href="">关于我们</a>
+        <a class="anniu" href="">会员中心</a>
+      </div>    
+   <div id=sowing-map>
+        <div class="main_div">
+                <div class="arrows">
+                      <span title="1" class="arrow"></span>
+                      <span title="0" class="arrow" style="float: right">></span>
+                </div>
+             
+                <ul class="ul_img">
+                      <li class="li_img"><img src="lunbo1.png"/></li>
+                      <li class="li_img"><img src="lunbo2.png"/></li>
+                      <li class="li_img"><img src="lunbo3.png"/></li>
+                      <li class="li_img"><img src="lunbo4.png"/></li>
+                </ul>
+            </div>
+             
+                <div style="margin-left: 600px">
+                      <div class="div_btn"></div>
+                      <div class="div_btn"></div>
+                      <div class="div_btn"></div>
+                      <div class="div_btn"></div>
+                </div>
+      </div>    
+   <h id=item>     
+        <img  id="market1" class=market style="margin-top: 24.6%;" src="button.png"  onclick="toggle1()"></img>
+        <img  id="market2" class=market style="margin-top: 26%;"   src="button.png"  onclick="toggle2()"></img>
+        <img  id="market3" class=market style="margin-top: 27.4%;" src="button.png"  onclick="toggle3()"></img>
+        <img  id="market4" class=market style="margin-top: 28.8%;" src="button.png"  onclick="toggle4()"></img>
+        <img  id="market5" class=market style="margin-top: 30.2%;" src="button.png"  onclick="toggle5()"></img>
+        <img  id="market6" class=market style="margin-top: 31.6%;" src="button.png"  onclick="toggle6()"></img>
+        <img  id="market7" class=market style="margin-top: 33.0%;" src="button.png"  onclick="toggle7()"></img>
+        <img  id="market8" class=market style="margin-top: 34.4%;" src="button.png"  onclick="toggle8()"></img>
+        <img  id="market9" class=market style="margin-top: 35.8%;" src="button.png"  onclick="toggle9()"></img>
+        <img  id="market10" class=market style="margin-top: 37.2%;" src="button.png"  onclick="toggle10()"></img>
+
+        <h5 class=market2 style="margin-top: 24.4%;">微营销策划</h5>
+        <h5 class=market2 style="margin-top: 25.8%;">公众号搭建</h5>
+        <h5 class=market2 style="margin-top: 27.2%;">文章策划</h5>
+        <h5 class=market2 style="margin-top: 28.6%;">微商城装修</h5>
+        <h5 class=market2 style="margin-top: 30.0%;">品牌推广</h5>
+        <h5 class=market2 style="margin-top: 31.4%;">自媒体推广</h5>
+        <h5 class=market2 style="margin-top: 32.8%;">SEO优化</h5>
+        <h5 class=market2 style="margin-top: 34.2%;">付费推广央视广告</h5>
+        <h5 class=market2 style="margin-top: 35.6%;">诚心授牌</h5>
+        <h5 class=market2 style="margin-top: 37.0%;">舆情检测</h5>
+         <img src=one.png>
+       <div id=servise>
+            <button id=enroll>了解详情</button>
+        </div>
+       <img src=two.png>
+       <img src=three.png>
+       <img src=fore.png>
+       <img src=five.png>
+      </div> 
+   <div class=flogo style="margin-left: 20% ;margin-top:-20%">
+       <a><img src="firstlogo.png" style="height: 50px ; width:50px; margin:25px;"   ></img></a>   
+   </div>
+   <div class=flogo style="margin-left: 30% ;margin-top:-20%" > 
+        <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px"   ></img></a>   
+     </div>
+   <div class=flogo style="margin-left: 40%;margin-top:-20%">
+       <a><img src="firstlogo.png" style="height: 50px ; width:50px; margin:25px;"   ></img></a> 
+    </div>
+    <div class=flogo style="margin-left: 50% ;margin-top:-20%" > 
+        <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px"   ></img></a>   
+    </div>
+    <div class=flogo style="margin-left: 60%;margin-top:-20%">
+        <a><img src="firstlogo.png" style="height: 50px ; width:50px; margin:25px;"   ></img></a>    
+    </div>
+    <div class=flogo style="margin-left: 70% ;margin-top:-20%" > 
+        <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px"   ></img></a>   
+    </div>
+    
+    <div class=flogo style="margin-left: 20% ;margin-top:-10%">
+            <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px;"   ></img></a>   
+        </div>
+        <div class=flogo style="margin-left: 30% ;margin-top:-10%" > 
+             <a><img src="firstlogo.png" style="height: 50px ; width:50px; margin:25px"   ></img></a>   
+          </div>
+        <div class=flogo style="margin-left: 40%;margin-top:-10%">
+            <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px;"   ></img></a> 
+         </div>
+         <div class=flogo style="margin-left: 50% ;margin-top:-10%" > 
+             <a><img src="firstlogo.png" style="height: 50px ; width:50px;margin:25px"   ></img></a>   
+         </div>
+         <div class=flogo style="margin-left: 60%;margin-top:-10%">
+             <a><img src="secondlogo.png" style="height: 60px ; width:50px; margin-top:20px; margin-left: 25px;"   ></img></a>    
+         </div>
+         <div class=flogo style="margin-left: 70% ;margin-top:-10%" > 
+             <a><img src="firstlogo.png" style="height: 50px ; width:50px; margin:25px"   ></img></a>   
+         </div>
+         <div><img src="six.png">
+            <ul class=firstlist style="margin-top: -49.5%;">公众号搭建</ul>
+            <ul class=firstlist style="margin-top: -46%;">微商城装修</ul>
+            <ul class=firstlist style="margin-top: -42.7%;">文案策划</ul>
+            <ul class=firstlist style="margin-top: -39.4%;">品牌推广</ul>
+            <ul class=firstlist style="margin-top: -35.9%;">微营销王牌课程</ul>
+            <ul class=firstlist style="margin-top: -32.6%;">全网付费业务代办</ul>
+            <ul class=firstlist style="margin-top: -29.4%;">自媒体推广</ul>
+            <ul class=firstlist style="margin-top: -26%;">诚信授牌</ul>
+            <ul class=firstlist style="margin-top: -22.6%;">舆情监测</ul>
+            <ul class=firstlist style="margin-top: -19.2%;">SEO优化</ul>
+            <ul class=firstlist style="margin-top: -16%;">央视广告</ul> 
+            <img  id="market11" class=market3 style="margin-top: -49.5%;" src="button.png"  onclick="toggle11()"></img>
+            <img  id="market12" class=market3 style="margin-top: -46%;"   src="button.png"  onclick="toggle12()"></img>
+            <img  id="market13" class=market3 style="margin-top: -42.7%;" src="button.png"  onclick="toggle13()"></img>
+            <img  id="market14" class=market3 style="margin-top: -39.4%;" src="button.png"  onclick="toggle14()"></img>
+            <img  id="market15" class=market3 style="margin-top: -35.9%;" src="button.png"  onclick="toggle15()"></img>
+            <img  id="market16" class=market3 style="margin-top: -32.6%;" src="button.png"  onclick="toggle16()"></img>
+            <img  id="market17" class=market3 style="margin-top: -29.4%;" src="button.png"  onclick="toggle17()"></img>
+            <img  id="market18" class=market3 style="margin-top: -26%;" src="button.png"  onclick="toggle18()"></img>
+            <img  id="market19" class=market3 style="margin-top: -22.6%;" src="button.png"  onclick="toggle19()"></img>
+            <img  id="market20" class=market3 style="margin-top: -19.2%;" src="button.png"  onclick="toggle20()"></img>
+            <img  id="market21" class=market3 style="margin-top: -16%;" src="button.png"  onclick="toggle21()"></img>
+             <button id=enroll2>了解详情</button>  
+        </div>
+ 
+<div id=banner>
+    <ul class=secondlist style="margin-top: -49.5%;">开通并搭建微信公众运营平台，免费认证</ul>
+    <ul class=secondlist style="margin-top: -46%;">使用微商城进行产品销售</ul>
+    <ul class=secondlist style="margin-top: -42.7%;">持续对公众号进行内容营销和活动策划</ul>
+    <ul class=secondlist style="margin-top: -39.4%;">面向全网对品牌进行布局，并实施内容发布和推广</ul>
+    <ul class=secondlist style="margin-top: -35.9%;">企业学习如何做好微营销</ul>
+    <ul class=secondlist style="margin-top: -32.6%;">代办各类付费渠道的开户业务和前期账户搭建</ul>
+    <ul class=secondlist style="margin-top: -29.4%;">提高品牌曝光度与品牌美誉度，被更多用户关注</ul>
+    <ul class=secondlist style="margin-top: -26%;">授予国家部委级协会认证的诚信示范牌匾</ul>
+    <ul class=secondlist style="margin-top: -22.6%;">时刻关注舆情走向，提前把控市场方向</ul>
+    <ul class=secondlist style="margin-top: -19.2%;">让品牌和内容更容易被搜索引擎抓取并搜录</ul>
+    <ul class=secondlist style="margin-top: -16%;">登陆央视电视广告</ul> 
+       </div>
+<div id=feature>
+        <ul class=threelist style="margin-top: -49.5%;">可使用公众号进行品牌宣传和产品销售</ul>
+        <ul class=threelist style="margin-top: -46%;">通过微商城获取客户提成销售额</ul>
+        <ul class=threelist style="margin-top: -42.7%;">通过公众号获取粉丝用户</ul>
+        <ul class=threelist style="margin-top: -39.4%;">利用在各大平台和载体的全网布局，曝光品牌吸引粉丝</ul>
+        <ul class=threelist style="margin-top: -35.9%;">掌握企业微营销课程并执行，提高业绩</ul>
+        <ul class=threelist style="margin-top: -32.6%;">用专业的能力帮助企业在付费推广平台上迈出平稳第一步</ul>
+        <ul class=threelist style="margin-top: -29.4%;">吸引网民关注平台，被更多用户关注</ul>
+        <ul class=threelist style="margin-top: -26%;">授予国家部委级协会认证的诚信示范牌匾</ul>
+        <ul class=threelist style="margin-top: -22.6%;">时刻关注舆情走向，提前把控市场方向</ul>
+        <ul class=threelist style="margin-top: -19.2%;">让品牌和内容更容易被搜索引擎抓取并搜录</ul>
+        <ul class=threelist style="margin-top: -16%;">登陆央视电视广告</ul> 
+       </div>
+    <img src="seven.png">
+<div id=merit>
+    <p style="margin-left: 5%;">维生数</p>
+    <p style="text-align: center;">专业学生技术服务平台</p>
+    <p style="letter-spacing:1px ;color:999999;opacity:0.5;" >快速登陆</p>
+       </div>
+
+ <div class="login_putin" >
+            <ul>
+                <ul class="user1" style="margin-top: -14.9%;">用户名</ul>
+                <ul id="user2" style="margin-top: -15%;"><input class="text" ></ul>
+                <ul  class="user1" style="margin-top: -13%;">密码</ul>
+                <ul id="user2" style="margin-top: -13.1%;" ><input class="password" ></li>
+            </ul>
+</div>
+
+<div class="login_btn">
+    	<input type="submit1" value="登陆">
+    </div>
+
+<div class="login_btn2">
+        <input type="submit2" value="注册">
+    </div>
+
+
+<div id=menu>
+    <a style="color:#d1d1d1;font-size: 18px; margin-left: 37%;margin-top: -28%; position: absolute;z-index:1;">网站地图 </a>
+    <a class=menu style="margin-top: -26%">首页 Home ></a>
+    <a class=menu style="margin-top: -24%">服务套餐 Service ></a>
+    <a class=menu style="margin-top: -22%">行业方案 Cace ></a>
+    <a class=menu style="margin-top: -20%">培训中心 Training ></a>
+    <a class=menu style="margin-top: -18%">团队风采 Teacher ></a>
+    <a class=menu style="margin-top: -16%">关于我们 Menu ></a>
+    <a class=menu style="margin-top: -14%">会员中心 ></a>
+       </div>
+<div id=login>
+        <a style="color:#d1d1d1;font-size: 18px; margin-left: 50%;margin-top: -28%; position: absolute;z-index:1;">关注我们 </a>
+       </div>
+<div id=shop>
+       </div>
+<div id=aboutus>
+       </div>
+<div id=joinus>
+       </div>
+<div id=link>
+       </div>
+<div id=footer>
+       </div>
+   </body>
+</html>
