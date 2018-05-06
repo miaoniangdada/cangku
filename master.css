@@ -92,7 +92,7 @@ overflow:hidden;
 }
 
 #nav{
-    width: 106%;
+    width: 104%;
     height: 40px;
     margin-top: -4%;
     margin-left: -3%;
@@ -102,28 +102,31 @@ overflow:hidden;
     overflow:hidden;
 }
 .anniu1{
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    position: absolute;
+    width: 120px;
+    font-family:"微软雅黑";
+    line-height: 40px;
     background-color: #f5a219;
-    margin-left: 260px;
+    margin-left: 23%;
     text-align: center;
     text-decoration: none;
     color: black;
-    margin-top: 0;
+    margin-top: 0px;
     margin-bottom: 0;
     padding: 0;
 }
 .anniu{
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    position: absolute;
+    line-height: 40px;
+    width: 120px;
+    font-family:"微软雅黑";
     background-color:#f5a219;
-    margin-left: 50px;
     text-align: center;
     text-decoration: none;
     color: black;
-    margin-top: 0;
+    margin-top: -0px;
     margin-bottom: 0;
     padding: 0;
 }
@@ -155,7 +158,7 @@ overflow:hidden;
     left: 0px;
     }
 .arrows {
-    z-index: 9999;
+    z-index: 999;
     position: absolute;
     padding-top: 230px;
     width: 100%;
@@ -211,7 +214,7 @@ overflow:hidden;
     }
     
 .arrows {
-    z-index: 9999;
+    z-index: 999;
     position: absolute;
     padding-top: 230px;
     width: 800px;
@@ -307,6 +310,9 @@ overflow:hidden;
     border-radius: 5px;
     background-color: #f49800   
     }
+#enroll:hover{
+    background:url(hover.png);   
+}
 .firstlist{
     margin-left: 24%;
     position: absolute;
@@ -319,22 +325,26 @@ overflow:hidden;
     font-size: 18px;
     color:#ffffff;
     border-radius: 5px;
-    background-color: #f49800;   
+    position: absolute;
     margin-left: 45%;
     margin-top: -10%;
-    position: absolute;
+    background-color: #f49800;   
     z-index:1;
+    }
+    #enroll2:hover{
+        background:url(hover.png); 
+        background-color: #fea717  
     }
 .secondlist{
     margin-left: 33.6%;
     position: absolute;
-    color: #666666;  
+    color: #898989;  
     font-size: 12px; 
     }
 .threelist{
     margin-left: 52.2%;
     position: absolute;
-    color: #666666;  
+    color: #898989;  
     font-size: 12px; 
     }
 #merit{          
@@ -349,8 +359,8 @@ overflow:hidden;
     margin-top: -24%;         
     }           
 .user1{
-    height: 2.9%;
-    margin-left: 14.7%;
+    height: 2.8%;
+    margin-left: 16.7%;
     background-color: #ffffff;
     font-family:"微软雅黑";
     padding-left: 0px;
@@ -361,6 +371,7 @@ overflow:hidden;
     }
 #user2{
     text-align: center;
+    height: 2.8%;
     padding-left: 0px;
     background-color: #ffffff;
     margin-left: 17.8%;
@@ -369,16 +380,17 @@ overflow:hidden;
     width:12.3%;border:2px solid black
     }
 
-    .login_btn{
+    .content-form-signup{
         width:3.5%;
-        height: 2.1%;
-        margin-left: 20%;
+        height: 3.1%;
+        margin-left: 19.5%;
         font-family:"微软雅黑";font-weight:bold;
-        margin-top:-11%; 
+        background:#fea717;
+        margin-top:-9%; 
         position: absolute;
         z-index:1;
     }
-    .login_btn input{
+    .content-form-signup input{
         width:100%;
         margin:0;
         padding:5px;
@@ -389,21 +401,23 @@ overflow:hidden;
         font-weight:bolder;
         letter-spacing:1em;
     }
-    .login_btn input:hover{
-        background:#fea717;
-        }
+    .submit:hover{
+        background:url(hover.png); 
+        background-color: #fea717  
+    }
 
     
-    .login_btn2{
-            width:3.5%;
-            height: 2.1%;
+    .link{
+            width:3%;
+            height: 3.1%;
             margin-left: 27%;
-            margin-top:-11%; 
+            margin-top:-9%; 
             position: absolute;
+            background:#fea717;
             font-family:"微软雅黑";font-weight:bold;
             z-index:1;
         }
-        .login_btn2 input{
+        .link input{
             width:100%;
             margin:0;
             padding:5px;
@@ -414,7 +428,7 @@ overflow:hidden;
             font-weight:bolder;
             letter-spacing:1em;
         }
-        .login_btn2 input:hover{
+        .link:hover{
             background:#fea717;
             }
 .menu{
@@ -422,4 +436,134 @@ overflow:hidden;
    font-size: 15px;
    margin-left: 36%;
    position: absolute;
+}
+#we{
+    height: 6%;
+    width: 6%;
+    position: absolute;
+    margin-left: 48%;
+    margin-top: -20%;
+}
+.word1{
+    font-family:"微软雅黑";font-weight:bold;
+    font-size: 14px;
+    letter-spacing:2px;
+    width: 150px;
+    margin-left: 60%;
+    margin-top: -105%;
+    position: absolute;
+    color: #ffffff; 
+}
+
+.word2{
+    font-family:"微软雅黑";font-weight:bold;
+    font-size: 13px;
+    transform: scale(0.90);
+    width: 150px;
+    margin-left: 60%;
+    position: absolute;
+    color: #ffffff; 
+    opacity:0.5;
+}
+.thephoto{
+position: absolute; 
+margin-left: 65%;
+height: 5%;  
+width: 2.8%; 
+}
+
+.china{
+    position: absolute; 
+    color: #999999;
+    font-family:"微软雅黑";
+    font-size: 18px;
+    margin-left: 68%;
+    height: 5%;  
+    width: 8%; 
+    }
+
+.number{
+    position: absolute; 
+    color: #ffffff;
+    font-family:"微软雅黑";
+    font-size: 14px;
+    margin-left: 68%;
+    height: 5%;  
+    width: 14%; 
+    }
+#btnshow{
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    margin-left: 25%;
+    margin-top: 0%;
+    position: absolute;
+    z-index: 1;
+    
+}
+#btnshow:hover{ 
+    background-color: #666666;  
+}
+#bg{ display: none;  position: absolute;  top: 0%;
+    left: 0%;  width: 100%;  height: 100%;  background-color: black; 
+   z-index:1001;  -moz-opacity: 0.7;  opacity:.70;  filter: alpha(opacity=70);}  
+  
+#show{display: none;  position: absolute;  top: 25%;  left: 22%;  width: 53%;
+    height: 48%;  padding: 0px;  border: 1px solid #E8E9F7; 
+     background-color: white;  z-index:1002;  overflow: auto;}  
+
+#btnclose{
+border: none;
+position: absolute;
+height: 38px;
+margin-top: -5%;
+margin-left: 90%;
+background-color:#fea717;
+display:block;
+font-size:40px;
+}
+#btnclose:hover{ 
+    background-color: #999999;  
+}
+#hello{
+background-color:#fea717;
+height: 40px;
+font-size:20px;
+margin-top: -20px;
+margin-left: -0px;
+margin-right: -0px;
+border: 0px; 
+line-height: 40px;
+color: #ffffff;
+font-family:"微软雅黑";
+font-weight:bold;
+text-align: center; 
+}
+#bbback{
+height: 88%;
+width: 100%;
+position: absolute;
+background-color: #142434;   
+}
+#inputOne{
+    border-radius:4px;
+    margin-top: 6%;
+    margin-left: 20%;
+    height: 10%;
+    width: 60%;
+}
+#inputTwo{
+    border-radius:4px;
+    margin-top: 4%;
+    margin-left: 20%;
+    height: 10%;
+    width: 60%;
+}
+#inputThree{
+    border-radius:6px;
+    margin-top: 6%;
+    margin-left: 45%;
+    height: 10%;
+    width: 10%;
+    background-color:#fea717
 }
